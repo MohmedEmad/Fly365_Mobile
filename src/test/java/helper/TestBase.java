@@ -19,14 +19,14 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public static AndroidDriver<WebElement> driver;
 //    public static IOSDriver<WebElement> driver;
 
-    AppiumDriverLocalService service = new AppiumServiceBuilder().usingPort(Integer.valueOf("4723")).withAppiumJS(new File("/Users/remonrefaat/node_modules/appium/build/lib/main.js")).build();
+    //AppiumDriverLocalService service = new AppiumServiceBuilder().usingPort(Integer.valueOf("4723")).withAppiumJS(new File("/Users/remonrefaat/node_modules/appium/build/lib/main.js")).build();
 
     @BeforeSuite()
     public void startDriver() throws MalformedURLException {
 ////        service.start();
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"9");
+        caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 3 XL");
         String appPath = System.getProperty("user.dir")+"/Application/app-debug.apk";
         caps.setCapability(MobileCapabilityType.APP,appPath);
